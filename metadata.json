@@ -1,0 +1,5 @@
+{
+  "name": "Social Interaction Analyzer",
+  "description": "An extension to scan a post's interactions and categorize users into 'followed' and 'not followed' lists.",
+  "requestFramePermissions": []
+}

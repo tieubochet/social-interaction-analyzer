@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Social Interaction Analyzer",
+  "version": "1.0",
+  "description": "An extension to scan a post's interactions and categorize users into 'followed' and 'not followed' lists.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://aistudiocdn.com https://cdn.tailwindcss.com; object-src 'self'"
+  }
+}
