@@ -96,22 +96,52 @@
     .user-list {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
     }
-    .user-list p {
+    .user-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .user-item p {
       margin: 0;
       font-size: 15px;
       color: var(--text-color);
+    }
+    .follow-button {
+      background-color: var(--text-color);
+      color: white;
+      border: 1px solid var(--text-color);
+      border-radius: 9999px;
+      padding: 4px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      min-width: 90px;
+      text-align: center;
+      transition: background-color 0.2s ease, color 0.2s;
+    }
+    .follow-button:hover:not(:disabled) {
+      background-color: #272c30;
+    }
+    .follow-button.followed {
+      background-color: transparent;
+      color: var(--secondary-text-color);
+      border-color: #CFD9DE;
+      cursor: not-allowed;
+    }
+    .follow-button:disabled {
+      cursor: not-allowed;
+    }
+    .follow-button:disabled:not(.followed) {
+       background-color: #EFF3F4;
+       color: var(--secondary-text-color);
+       border-color: #EFF3F4;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="input-group">
-      <label for="postUrl">X Post URL</label>
-      <input type="text" id="postUrl" value="https://x.com/0xDejun/status/1964616838001">
-    </div>
-
     <div class="input-group">
       <label for="username">Your X Username</label>
       <input type="text" id="username" value="_tieubochet">
