@@ -1,12 +1,35 @@
 {
   "manifest_version": 3,
-  "name": "Social Interaction Analyzer",
+  "name": "Far Ex",
   "version": "1.0",
-  "description": "An extension to scan a post's interactions and categorize users into 'followed' and 'not followed' lists.",
-  "action": {
-    "default_popup": "index.html"
+  "description": "Tạo comment ngắn thân thiện cho từng bài viết trên Farcaster bằng Gemini 1.5 Flash.",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://farcaster.xyz/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://x.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://farcaster.xyz/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "side_panel": {
+    "default_path": "sidepanel.html"
   },
-  "content_security_policy": {
-    "extension_pages": "script-src 'self' https://aistudiocdn.com https://cdn.tailwindcss.com; object-src 'self'"
+  "action": {
+    "default_title": "Open X Follower Check"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
   }
 }
